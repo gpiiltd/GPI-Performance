@@ -1,8 +1,15 @@
-# OluwaGbenga
+# GPI Performance adaobieze
+![adaobieze Stats](https://github-readme-stats.vercel.app/api?username=adaobieze&show_icons=true&include_all_commits=true&count_private=true&theme=radical)
 
-![Oluwagbenga-cloud's GitHub Stats](https://github-readme-stats.vercel.app/api?username=Oluwagbenga-cloud&show_icons=true&theme=default)
+![endyApina Stats](https://github-readme-stats.vercel.app/api?username=endyApina&show_icons=true&include_all_commits=true&count_private=true&theme=radical)
 
+![Oluwagbenga-cloud's Stats](https://github-readme-stats.vercel.app/api?username=Oluwagbenga-cloud&show_icons=true&include_all_commits=true&count_private=true&theme=radical)
 
-![Oluwagbenga-cloud's GitHub Stats](https://github-readme-stats.vercel.app/api?username=chiomaT&show_icons=true&theme=default)
+![chiomaT Stats](https://github-readme-stats.vercel.app/api?username=chiomaT&show_icons=true&include_all_commits=true&count_private=true&theme=radical)
+
 
 ![kitoga GitHub Stats](https://github-readme-stats.vercel.app/api?username=kitoga&show_icons=true&theme=default)
+
+![joshajiniran GitHub Stats](https://github-readme-stats.vercel.app/api?username=joshajiniran&show_icons=true&theme=default)
+
+![audrey-roe Stats](https://github-readme-stats.vercel.app/api?username=audrey-roe&show_icons=true&include_all_commits=true&count_private=true&theme=radical)
