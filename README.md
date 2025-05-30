@@ -1,4 +1,8 @@
-# GPI Performance
+# GPI Performance 
+![endyApina GitHub stats](https://github-readme-stats.vercel.app/api?username=endyApina&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage)
+
+![maximdave Stats](https://github-readme-stats.vercel.app/api?username=maximdave&show_icons=true&include_all_commits=true&org=gpiiltd&count_private=true&theme=radical)
+
 ![adaobieze Stats](https://github-readme-stats.vercel.app/api?username=adaobieze&show_icons=true&include_all_commits=true&org=gpiiltd&count_private=true&theme=radical)
 
 ![endyApina Stats](https://github-readme-stats.vercel.app/api?username=endyApina&show_icons=true&include_all_commits=true&org=gpiiltd&count_private=true&theme=radical)
