@@ -1,19 +1,10 @@
 # GPI Performance 
-![endyApina GitHub stats](https://github-readme-stats.vercel.app/api?username=endyApina&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage)
-
 ![maximdave Stats](https://github-readme-stats.vercel.app/api?username=maximdave&show_icons=true&include_all_commits=true&org=gpiiltd&count_private=true&theme=radical)
-
 ![adaobieze Stats](https://github-readme-stats.vercel.app/api?username=adaobieze&show_icons=true&include_all_commits=true&org=gpiiltd&count_private=true&theme=radical)
-
 ![endyApina Stats](https://github-readme-stats.vercel.app/api?username=endyApina&show_icons=true&include_all_commits=true&org=gpiiltd&count_private=true&theme=radical)
-
 ![Oluwagbenga-cloud's Stats](https://github-readme-stats.vercel.app/api?username=Oluwagbenga-cloud&show_icons=true&include_all_commits=true&count_private=true&theme=radical)
-
 ![chiomaT Stats](https://github-readme-stats.vercel.app/api?username=chiomaT&show_icons=true&include_all_commits=true&count_private=true&theme=radical)
-
-
 ![kitoga GitHub Stats](https://github-readme-stats.vercel.app/api?username=kitoga&show_icons=true&theme=default)
-
 ![joshajiniran GitHub Stats](https://github-readme-stats.vercel.app/api?username=joshajiniran&show_icons=true&theme=default)
-
 ![audrey-roe Stats](https://github-readme-stats.vercel.app/api?username=audrey-roe&show_icons=true&include_all_commits=true&count_private=true&theme=radical)
+![Gogo-Eng Stats](https://github-readme-stats.vercel.app/api?username=Gogo-Eng&show_icons=true&include_all_commits=true&count_private=true&theme=radical)
