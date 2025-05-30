@@ -1,7 +1,7 @@
-# GPI Performance adaobieze
-![adaobieze Stats](https://github-readme-stats.vercel.app/api?username=adaobieze&show_icons=true&include_all_commits=true&count_private=true&theme=radical)
+# GPI Performance
+![adaobieze Stats](https://github-readme-stats.vercel.app/api?username=adaobieze&show_icons=true&include_all_commits=true&org=gpiiltd&count_private=true&theme=radical)
 
-![endyApina Stats](https://github-readme-stats.vercel.app/api?username=endyApina&show_icons=true&include_all_commits=true&count_private=true&theme=radical)
+![endyApina Stats](https://github-readme-stats.vercel.app/api?username=endyApina&show_icons=true&include_all_commits=true&org=gpiiltd&count_private=true&theme=radical)
 
 ![Oluwagbenga-cloud's Stats](https://github-readme-stats.vercel.app/api?username=Oluwagbenga-cloud&show_icons=true&include_all_commits=true&count_private=true&theme=radical)
 
