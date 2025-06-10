@@ -7,9 +7,10 @@ import { DateRange } from "react-day-picker";
 
 import { useOrgMembers } from "@/hooks/useOrgMembers";
 
-import { Tabs, DateRangePicker } from "@/components/ui";
+import { DateRangePicker } from "@/components/ui";
 
-import {OrgMetrics, DevMetrics } from "@/components/shared";
+import { OrgMetrics } from "@/components/shared";
+import { useMultipleDevStats } from "@/hooks/useMultipleDevStats";
 
 export default function Home() {
 
@@ -22,55 +23,21 @@ export default function Home() {
 
   const { activeRepositories, loading } = useOrgRepos();
   const { members, loading: membersLoading } = useOrgMembers()
+  const { data: devStatsData, loading: statsLoading } = useMultipleDevStats(members, activeRepositories, selectedDateRange);
 
-  // const testMember = ['adaobieze']
-  const testMember = ['Oluwagbenga-cloud']
-  // const testMember = ['audrey-roe']
-  const testRepo = [{
-    "id": 938451906,
-    "name": "nssf_django",
-    "full_name": "gpiiltd/nssf_django",
-    "pushed_at": "2025-06-03T14:29:22Z",
-    "archived": false
-  }]
+  // const testMember = ['Oluwagbenga-cloud']
+  // // const testMember = ['audrey-roe']
+  // const testRepo = [{
+  //   "id": 938451906,
+  //   "name": "nssf_django",
+  //   "full_name": "gpiiltd/nssf_django",
+  //   "pushed_at": "2025-06-03T14:29:22Z",
+  //   "archived": false
+  // }]
 
-  // console.log('members:', members)
-  // console.log('selectedDateRange:', selectedDateRange)
-
-  const tabItems = [
-    {
-      value: "dev-metrics",
-      label: "Dev Metrics",
-      content: (
-        <div className="p-4 border rounded-lg flex flex-col">
-          {loading ? (
-            <div className="flex items-center justify-center">Fetching repositories...</div>
-          ) : membersLoading ? (
-            <div className="flex items-center justify-center">Fetching members...</div>
-          ) : (
-            <div>
-              <DevMetrics dateRange={selectedDateRange} activeRepos={activeRepositories} members={members} />
-            </div>
-          )}
-        </div>
-      ),
-    },
-    // {
-    //   value: "org-metrics",
-    //   label: "Organization Metrics",
-    //   content: (
-    //     <div className="p-4 border rounded-lg flex flex-col">
-    //       {loading ? (
-    //         <div className="flex items-center justify-center">Fetching repositories...</div>
-    //       ) : (
-    //         <div>
-    //           <OrgMetrics dateRange={selectedDateRange} activeRepos={activeRepositories} />
-    //         </div>
-    //       )}
-    //     </div>
-    //   ),
-    // },
-  ];
+  // // console.log('members:', members)
+  // // console.log('selectedDateRange:', selectedDateRange)
+  // console.log('devStatsData:', devStatsData)
 
   return (
     <div className="w-screen h-screen p-4 flex flex-col">
@@ -83,13 +50,22 @@ export default function Home() {
         </div>
       </div>
       <div className="flex-1 h-full w-full">
-        <Tabs
-          items={tabItems}
-          defaultValue="dev-metrics"
-          className="w-full"
-          listClassName="bg-background mb-2 w-full !text-lg"
-          contentClassName="animate-in fade-in-50"
-        />
+        {loading ? (
+          <div className="flex items-center justify-center">Fetching repositories...</div>
+        ) : membersLoading ? (
+          <div className="flex items-center justify-center">Fetching team members...</div>
+        ) : statsLoading ? (
+          <div className="flex items-center justify-center">Fetching & compiling dev stats...</div>
+        ) : (
+          <div>
+            <OrgMetrics
+              dateRange={selectedDateRange}
+              activeRepositories={activeRepositories}
+              members={members}
+              devStatsData={devStatsData}
+            />
+          </div>
+        )}
       </div>
 
     </div>

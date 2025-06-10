@@ -24,14 +24,14 @@ export const githubClient = async (
     const remaining = res.headers.get('X-RateLimit-Remaining');
     const limit = res.headers.get('X-RateLimit-Limit');
     const reset = res.headers.get('X-RateLimit-Reset');
-    // console.log(`[GitHubClient] Rate Limit: ${remaining}/${limit} (resets at ${reset})`);
+    console.log(`[GitHubClient] Rate Limit: ${remaining}/${limit} (resets at ${reset})`);
 
 
     if (res.status === 403 && remaining === '0') {
         const now = Math.floor(Date.now() / 1000);
         const waitTime = reset ? (parseInt(reset) - now + 1) * 1000 : attempt * 1000;
 
-        // console.warn(`[GitHubClient] Rate limited. Waiting ${waitTime / 1000}s before retry.`);
+        console.warn(`[GitHubClient] Rate limited. Waiting ${waitTime / 1000}s before retry.`);
 
         if (onRateLimit) {
             onRateLimit({ waitTime, attempt });

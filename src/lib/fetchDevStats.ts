@@ -1,5 +1,5 @@
 // @/lib/fetchDevStats.ts
-import { githubClient, githubClientRaw } from './githubClient';
+import { githubClient } from './githubClient';
 
 export interface DevRepoStats {
     repo: string;
@@ -43,29 +43,6 @@ export const paginateGithub = async (url: string) => {
     return results;
 };
 
-// export const paginateGithub = async (url: string) => {
-//     let results: any[] = [];
-//     let nextUrl: string | null = url;
-
-//     while (nextUrl) {
-//         const response = await githubClientRaw(nextUrl);
-//         if (!response.ok) throw new Error(`GitHub API error: ${response.statusText}`);
-
-//         const data = await response.json();
-//         results.push(...(Array.isArray(data.items) ? data.items : data));
-
-//         const linkHeader = response.headers.get('Link');
-//         if (linkHeader && linkHeader.includes('rel="next"')) {
-//             const match = linkHeader.match(/<([^>]+)>;\s*rel="next"/);
-//             nextUrl = match ? match[1] : null;
-//         } else {
-//             nextUrl = null;
-//         }
-//     }
-
-//     return results;
-// };
-
 
 export const fetchDevStatsInRepo = async (
     //   org: string,
@@ -77,11 +54,16 @@ export const fetchDevStatsInRepo = async (
     const repoFullName = `gpiiltd/${repo}`;
 
     // 1. Commits by author within date range
-    const commits = await paginateGithub(
-        `https://api.github.com/repos/${repoFullName}/commits?author=${dev}&since=${since}&until=${until}&per_page=100`
-    );
+    // const commits = await paginateGithub(
+    //     `https://api.github.com/repos/${repoFullName}/commits?author=${dev}&since=${since}&until=${until}&per_page=100`
+    // );
 
     // console.log(commits)
+
+    let commits = await paginateGithub(
+        `https://api.github.com/repos/${repoFullName}/commits?author=${dev}&since=${since}&until=${until}`
+    );
+    
 
 
     // 2. PRs opened by author in date range
@@ -121,6 +103,24 @@ export const fetchDevStatsInRepo = async (
             new Date(pr.created_at) >= new Date(since) &&
             new Date(pr.created_at) <= new Date(until)
     );
+
+    // Fallback: Check for commits inside PRs authored by this user
+    if (commits.length === 0) {
+        const prCommits: any[] = [];
+        const userPRs = pullRequests.filter(
+            (pr: any) =>
+                pr.user.login === dev &&
+                new Date(pr.created_at) >= new Date(since) &&
+                new Date(pr.created_at) <= new Date(until)
+        );
+    
+        for (const pr of userPRs) {
+            const commitsInPR = await githubClient(`${pr.url}/commits`);
+            prCommits.push(...commitsInPR.filter((c: any) => c.commit?.author?.name?.toLowerCase().includes(dev.toLowerCase())));
+        }
+    
+        commits = prCommits;
+    }
 
     // for (const pr of userPRs) {
     //     // Fetch reviews, comments, and commits in parallel
